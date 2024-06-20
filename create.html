@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Note App</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Geologica:wght@500&display=swap');
+
+    body {
+    font-family: 'Geologica', Sans-Serif;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    }
+
+    .form-container {
+    margin-top: 50px;
+      color: #ecf0f1;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #ecf0f1;
+    }
+
+    .form-container textarea {
+      resize: vertical;
+      min-height: 150px;
+      background-color: #34495e;
+      border: none;
+      color: #ecf0f1;
+    }
+
+    .form-container button {
+      margin-top: 10px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      background-color: #2980b9;
+      border-color: #2980b9;
+    }
+
+    .form-container button:hover::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300%;
+      height: 300%;
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: translate(-50%, -50%);
+      transition: all 0.3s ease;
+    }
+
+    .form-container button:hover {
+      transform: translateY(-2px);
+      background-color: #34495e;
+    }
+
+    .form-container .btn i {
+      margin-right: 10px;
+    }
+
+    .back-link {
+      display: block;
+      margin-top: 10px;
+      text-align: center;
+      color: #2980b9;
+    }
+
+    .back-link:hover {
+      color: #34495e;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container form-container">
+    <form action="{{ url_for('create_note') }}" method="POST">
+      <h2>Create New Note</h2>
+      <div class="form-group">
+        <textarea class="form-control" name="note" placeholder="Enter your note here" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">
+        <i class="fas fa-plus-circle"></i> Create
+      </button>
+      <a href="http://127.0.0.1:5000/" class="back-link">Back</a>
+    </form>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
